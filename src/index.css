@@ -10,7 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @apply bg-gray-400 dark:bg-gray-900;
+  @apply bg-gray-100 dark:bg-gray-900;
 }
 
 
