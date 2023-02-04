@@ -23,8 +23,8 @@ const Country = () => {
                             </article>
 
                             <article>
-                                <h1 className='font-bold text-gray-900 text-4xl lg:text-5xl'>{item.name.official}</h1>
-                                <ul className='mt-4 flex flex-col items-start justify-start gap-2 text-slate-700'>
+                                <h1 className='font-bold text-gray-900 text-4xl lg:text-5xl mb-8 dark:text-white'>{item.name.official}</h1>
+                                <ul className='mt-4 flex flex-col items-start justify-start gap-2 text-slate-700 dark:text-gray-400'>
                                     <li>Capital : {item.capital[0]}</li>
                                     <li>Population : {item.population}</li>
                                     {/* <li>Currency :</li> */}
@@ -32,11 +32,11 @@ const Country = () => {
                                     <li>Subregion : {item.subregion}</li>
                                 </ul>
                                 {item.borders && <div>
-                                    <h3>Borders :</h3>
-                                    <ul>
+                                    <h3 className='text-gray-900 font-bold text-lg mb-2 dark:text-white'>Borders :</h3>
+                                    <ul className='flex flex-wrap items-start justify-start gap-2'>
                                         {
                                             item.borders.map((border, index) => (
-                                                <li key={index}>{border}</li>
+                                                <li key={index} className="bg-white p-2 rounded text-xs tracking-wide shadow dark:bg-gray-800 dark:text-gray-400">{border}</li>
                                             ))
                                         }
                                     </ul>
