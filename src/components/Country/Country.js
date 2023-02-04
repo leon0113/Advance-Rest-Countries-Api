@@ -17,10 +17,13 @@ const Country = () => {
                 {
                     country.map(item =>
                     (
-                        <div>
+                        <div key={item.population}>
                             <article>
-                                <img src={item.flags.svg} alt="" />
-                                <h1>{item.name.common}</h1>
+                                <img src={item.flags.svg} alt={item.name.common} />
+                            </article>
+
+                            <article>
+                                <h1>{item.name.official}</h1>
                             </article>
                         </div>
                     )
