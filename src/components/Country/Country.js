@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 
 const Country = () => {
@@ -36,11 +36,14 @@ const Country = () => {
                                     <ul className='flex flex-wrap items-start justify-start gap-2'>
                                         {
                                             item.borders.map((border, index) => (
-                                                <li key={index} className="bg-white p-2 rounded text-xs tracking-wide shadow dark:bg-gray-800 dark:text-gray-400">{border}</li>
+                                                <li key={index} className="bg-white p-2 rounded text-xs tracking-wide shadow text-gray-500 dark:bg-gray-800 dark:text-gray-400">{border}</li>
                                             ))
                                         }
                                     </ul>
                                 </div>}
+
+                                <Link to="/" className='inline-block mt-8 bg-white py-2 px-6 rounded shadow text-gray-800 hover:bg-gray-300 transition-all duration-200 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-400'>&larr; Back</Link>
+
                             </article>
                         </div>
                     )
