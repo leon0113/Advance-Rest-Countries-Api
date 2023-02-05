@@ -30,7 +30,7 @@ const Countries = () => {
             try {
                 const res = await fetch("https://restcountries.com/v3.1/all");
                 const data = await res.json();
-                setCountries(data.slice(0, 12));
+                setCountries(data);
             } catch (error) {
                 console.error(error)
             }
@@ -48,10 +48,27 @@ const Countries = () => {
         }
     }
 
-    function handleSearchCountry(e) {
-        e.preventDefault()
-        searchCountry()
+    async function filterByRegion(region) {
+        try {
+            const res = await fetch(`https://restcountries.com/v3.1/region/${region}`)
+            const data = await res.json()
+            setCountries(data)
+        } catch (error) {
+            console.error(error)
+        }
     }
+
+
+    function handleSearchCountry(e) {
+        e.preventDefault();
+        searchCountry();
+    }
+
+    function handleFilterByRegion(e) {
+        e.preventDefault();
+        filterByRegion();
+    }
+
 
     return (
         <div>
@@ -71,8 +88,13 @@ const Countries = () => {
                             />
                         </form>
 
-                        <form>
-                            <select className='w-52 outline-none py-3 px-4 shadow rounded text-gray-600 dark:text-gray-400 dark:bg-gray-800 dark:focus:bg-gray-700' name="filter-by-region" id="filter-by-region">
+                        <form onSubmit={handleFilterByRegion}>
+                            <select className='w-52 outline-none py-3 px-4 shadow rounded text-gray-600 dark:text-gray-400 dark:bg-gray-800 dark:focus:bg-gray-700'
+                             name="filter-by-region"
+                              id="filter-by-region" 
+                              value={regions.name} 
+                              onChange={(e) => filterByRegion(e.target.value)}
+                              >
                                 {
                                     regions.map((region, index) => (
                                         <option key={index} value={region.name}>
