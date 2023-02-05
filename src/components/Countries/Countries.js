@@ -3,6 +3,26 @@ import Article from '../Article/Article';
 
 const Countries = () => {
     const [countries, setCountries] = useState([]);
+    const regions = [
+        {
+            name: 'Europe'
+        },
+        {
+            name: 'Asia'
+        },
+        {
+            name: 'Africa'
+        },
+        {
+            name: 'Americas'
+        },
+        {
+            name: 'Oceania'
+        },
+        {
+            name: 'Antarctic'
+        },
+    ]
 
     useEffect(() => {
         const getCountries = async () => {
@@ -34,7 +54,13 @@ const Countries = () => {
 
                         <form>
                             <select className='w-52 outline-none py-3 px-4 shadow rounded' name="filter-by-region" id="filter-by-region">
-
+                                {
+                                    regions.map((region, index) => (
+                                        <option key={index} value={region.name}>
+                                            {region.name}
+                                        </option>
+                                    ))
+                                }
                             </select>
                         </form>
                     </div>
