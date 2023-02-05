@@ -25,6 +25,12 @@ const Countries = () => {
                         <form>
                             <input type="text" name='search' id='search' placeholder='Search for a country by its name' required />
                         </form>
+
+                        <form>
+                            <select name="filter-by-region" id="filter-by-region">
+
+                            </select>
+                        </form>
                     </div>
                     <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4'>
                         {
