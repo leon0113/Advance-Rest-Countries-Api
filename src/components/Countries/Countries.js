@@ -115,8 +115,5 @@ const Countries = () => {
         </div>
     );
 };
-l
-e
-o
-n
+
 export default Countries;
