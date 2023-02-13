@@ -68,7 +68,7 @@ const Countries = () => {
         e.preventDefault();
         filterByRegion();
     }
-
+    e
 
     return (
         <div>
